@@ -1,0 +1,17 @@
+@model Product
+
+<h3>Products/Details</h3>
+
+<div class="row my-3    ">
+    <div class="col-4">
+        <img class="img-fluid" src="~/img/@Model.Image" alt="">
+    </div>
+    <div class="col-8">
+        <div>
+            <h1>@Model.Title</h1>
+            <p>@Model.Description</p>
+            <p>@Model.Price $</p>
+            <p>@Model.IsActive</p>
+        </div>
+    </div>
+</div>

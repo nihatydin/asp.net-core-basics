@@ -1,0 +1,10 @@
+@model List<Product>
+<h1>Product List</h1>
+
+<div class="row">
+    @foreach(Product product in Model){
+        <div class="col-3">
+            @await Html.PartialAsync("_ProductCard",product)
+        </div>    
+}
+</div>
