@@ -96,6 +96,14 @@ namespace dotnet_basics.Controllers
             // Contact/GetData/Nihat/Aydin/23
             return View(rmodel);
         }
+
+        public IActionResult GetHeader()
+        {
+          //  var header = Request.Headers.ToList(); // Tüm header bilgilerini alır.
+            var value = Request.Headers["lorem"]; // Belirli bir header bilgisine erişim sağlar.
+
+            return View();
+        }
         
     }
 }
