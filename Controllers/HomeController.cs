@@ -9,13 +9,4 @@ public class HomeController : Controller
 
         return View();
     }
-
-    public ActionResult About()
-    {
-        return View();
-    }
-    public ActionResult Contact()
-    {
-        return View();
-    }
 }
