@@ -97,13 +97,33 @@ namespace dotnet_basics.Controllers
             return View(rmodel);
         }
 
+        // Header Bilgilerine Erişim
         public IActionResult GetHeader()
         {
-          //  var header = Request.Headers.ToList(); // Tüm header bilgilerini alır.
+            // var header = Request.Headers.ToList(); // Tüm header bilgilerini alır.
             var value = Request.Headers["lorem"]; // Belirli bir header bilgisine erişim sağlar.
-
+            Console.WriteLine(value);
+            
             return View();
         }
+
+        // Ajax ile Veri Alışverişi
+        public class AjaxModel
+        {
+            public string? Name { get; set; }
+            public int Age { get; set; }
+        }
+
+        public IActionResult AjaxExample()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AjaxExample([FromBody] AjaxModel ajaxModel)
+        {
+            return Json(new { message = $"Veri alındı: {ajaxModel.Name}, {ajaxModel.Age}" });
+        }
+
         
     }
 }

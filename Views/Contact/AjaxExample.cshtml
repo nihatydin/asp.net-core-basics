@@ -1,0 +1,77 @@
+<input type="text" id="nameInput" placeholder="Ad Gir">
+<input type="number" id="ageInput" placeholder="Yaş Gir">
+<button id="sendBtn">Gönder</button>
+
+<div id="result"></div>
+
+<!-- jQuery ile Ajax Örneği -->
+<!-- jQuery cdn -->
+<!--
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#sendBtn").click(function () {
+        $.ajax({
+            url: "http://localhost:5256/Contact/AjaxExample",
+            type: "POST",
+            data: {
+                name: $("#nameInput").val(),
+                age: $("#ageInput").val()
+            },
+            success: function (response) {
+                console.log(response.message);
+                $("#result").text(response.message);
+            },
+            error: function () {
+                console.log("Ajax hatası oluştu");
+            }
+        });
+    });
+</script>
+-->
+
+<!-- Fetch API ile Ajax Örneği -->
+<!--
+<script>
+document.getElementById("sendBtn").addEventListener("click", function () {
+    const name = document.getElementById("nameInput").value;
+    const age = document.getElementById("ageInput").value;
+
+    fetch("/Contact/AjaxExample", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, age })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Sunucu hatası");
+        return response.json(); 
+    })
+    .then(data => {
+        document.getElementById("result").innerText = "Sunucudan gelen: " + data.message;
+    })
+    .catch(error => {
+        console.error("Hata:", error);
+    });
+});
+</script>
+-->
+
+<!-- Axios ile Ajax Örneği -->
+<!-- axios cdn -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+document.getElementById("sendBtn").addEventListener("click", function () {
+    const name = document.getElementById("nameInput").value;
+    const age = document.getElementById("ageInput").value;
+
+    axios.post("/Contact/AjaxExample", { name, age })
+        .then(res => {
+            document.getElementById("result").innerText = "Sunucudan gelen: " + JSON.stringify(res.data.message);
+        })
+        .catch(err => {
+            console.error("Hata:", err);
+        });
+});
+</script>
