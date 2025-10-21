@@ -1,31 +1,21 @@
 # ASP.NET Core MVC Basics
 
-This project is a simple **ASP.NET Core MVC** application built to demonstrate the **fundamental concepts** of the MVC architecture.  
-It includes examples of **data transfer between controller and view**, **routing**, **layouts**, **partial views**, and **basic LINQ queries**.
+In this repository, I regularly share all the fundamental and essential topics in ASP.NET Core MVC with practical examples.  
+It includes examples of **data transfer between controller and view**, **routing**, **layouts**, **partial views**, **basic LINQ queries** and more.
 
----
+When you run the application, the homepage contains the links to all the shared topics. You can access the examples for any topic directly from the homepage.
 
-## Project Overview
-
-This project serves as a **beginner-friendly introduction** to ASP.NET Core MVC.  
-It demonstrates how different parts of the **MVC pattern (Model, View, Controller)** interact and how reusable components such as **layouts** and **partial views** can be implemented effectively.
+I have also covered all the methods and topics used here in detail on my Medium page. You can access all my articles here: [medium.com/@nihatydin](https://medium.com/@nihatydin)
 
 ---
 
 ## Features and Topics Covered
 
-### Transferring Data to View
-
-### Routing
-
-### Layout
-
-### Partial Views
-
-### \_ViewImports.cshtml and \_ViewStart.cshtml
-
-### Basic LINQ Queries
-
-### HTML Tag Helpers
-
-### Technologies Used
+- Methods of getting data from the user
+- Transferring Data to View
+- Model Binding
+- Basic LINQ Queries
+- Routing
+- Layout
+- Partial Views
+- HTML Tag Helpers
