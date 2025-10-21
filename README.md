@@ -1,7 +1,6 @@
 # ASP.NET Core MVC Basics
 
-In this repository, I regularly share all the fundamental and essential topics in ASP.NET Core MVC with practical examples.  
-It includes examples of **data transfer between controller and view**, **routing**, **layouts**, **partial views**, **basic LINQ queries** and more.
+In this repository, I regularly share all the fundamental and essential topics in ASP.NET Core MVC with practical examples. It includes examples of **data transfer between controller and view**, **routing**, **layouts**, **partial views**, **basic LINQ queries** and more.
 
 When you run the application, the homepage contains the links to all the shared topics. You can access the examples for any topic directly from the homepage.
 
