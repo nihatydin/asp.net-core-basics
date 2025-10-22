@@ -1,0 +1,9 @@
+@model dotnet_basics.Controllers.DataPassController.TempdataModel;
+
+<h4>TemData Redirect to Index Form</h4>
+
+<form asp-action="Tempdata" asp-controller="DataPass" method="post">
+    <input type="text" asp-for="Name" placeholder="İsim" />
+    <input type="email" asp-for="Email" placeholder="E-posta" />
+    <button type="submit">Gönder</button>
+</form>

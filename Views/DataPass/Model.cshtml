@@ -1,0 +1,10 @@
+@using dotnet_basics.Controllers
+@model List<DataPassController.Users>
+
+<h4>User List with Model</h4>
+<ul>
+@foreach (var user in Model)
+    {
+        <li>@user.Name</li>
+    }
+</ul>

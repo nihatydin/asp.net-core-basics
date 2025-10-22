@@ -1,0 +1,24 @@
+<style>
+    .data-pass-methods li a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<h2>View'a Veri Aktarma Yolları</h2>
+<ul class="data-pass-methods">
+    <li><a class="nav-link active" asp-controller="DataPass" asp-action="Model">Model ile veri alma</a></li>
+    <li><a class="nav-link active" asp-controller="DataPass" asp-action="Viewbag">ViewBag ile veri alma</a></li>
+    <li><a class="nav-link active" asp-controller="DataPass" asp-action="Viewdata">ViewData ile veri alma</a></li>
+    <li><a class="nav-link active" asp-controller="DataPass" asp-action="Tempdata">TempData ile veri alma ve redirect</a></li>
+</ul>
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+    <p>TemData Redirect Message:</p>
+        @TempData["Message"]
+    </div>
+}
+
