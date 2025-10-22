@@ -1,12 +1,9 @@
-@model dotnet_basics.Models.Contact
+@model dotnet_basics.Models.UserInput   
 
-<h1> Home/Contact Page</h1>
-<hr />
-<h2>Kullanicidan Veri Alma Islemleri</h2>
-
+<h3>Form ile Kullanıcıdan Veri Alma</h3>
 <!-- Form 1 name attribute kullanarak -->
 <!--
-<form asp-action="Index" asp-controller="Contact" method="post">
+<form asp-action="Form" asp-controller="UserInput" method="post">
     <input type="text" name="Name" placeholder="İsim" />
     <input type="email" name="Email" placeholder="E-posta" />
     <button type="submit">Gönder</button>
@@ -14,7 +11,7 @@
 -->
 
 <!-- Form 2 "asp-for" kullanarak model binding -->
-<form asp-action="Index" asp-controller="Contact" method="post">
+<form asp-action="Form" asp-controller="UserInput" method="post">
     <input type="text" asp-for="Name" placeholder="İsim" />
     <input type="email" asp-for="Email" placeholder="E-posta" />
     <button type="submit">Gönder</button>

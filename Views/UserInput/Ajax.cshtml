@@ -1,3 +1,5 @@
+<h3>Ajax ile Kullanıcıdan Veri Alma</h3>
+
 <input type="text" id="nameInput" placeholder="Ad Gir">
 <input type="number" id="ageInput" placeholder="Yaş Gir">
 <button id="sendBtn">Gönder</button>
@@ -11,7 +13,7 @@
 <script>
     $("#sendBtn").click(function () {
         $.ajax({
-            url: "http://localhost:5256/Contact/AjaxExample",
+            url: "http://localhost:5256/UserInput/AjaxExample",
             type: "POST",
             data: {
                 name: $("#nameInput").val(),
@@ -36,7 +38,7 @@ document.getElementById("sendBtn").addEventListener("click", function () {
     const name = document.getElementById("nameInput").value;
     const age = document.getElementById("ageInput").value;
 
-    fetch("/Contact/AjaxExample", {
+    fetch("/UserInput/AjaxExample", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -66,7 +68,7 @@ document.getElementById("sendBtn").addEventListener("click", function () {
     const name = document.getElementById("nameInput").value;
     const age = document.getElementById("ageInput").value;
 
-    axios.post("/Contact/AjaxExample", { name, age })
+    axios.post("/UserInput/Ajax", { name, age })
         .then(res => {
             document.getElementById("result").innerText = "Sunucudan gelen: " + JSON.stringify(res.data.message);
         })

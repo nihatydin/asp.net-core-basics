@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_basics.Controllers
 {
-    public class ContactController : Controller
+    public class UserInputController : Controller
     {
         public IActionResult Index()
         {
@@ -16,7 +16,7 @@ namespace dotnet_basics.Controllers
 
         //Form üzerinden parametre ile kullanıcıdan veri alma
         /* [HttpPost]
-          public IActionResult Index(string name, string email)
+          public IActionResult Form(string name, string email)
          {
              ViewBag.Message = $"Thank you {name}, we will contact you shortly at {email}.";
              return View();
@@ -25,7 +25,7 @@ namespace dotnet_basics.Controllers
 
         //Form üzerinden IFormCollection ile kullanıcıdan veri alma 
         /* [HttpPost]
-         public IActionResult Index(IFormCollection form)
+         public IActionResult Form(IFormCollection form)
          {
              var name = form["Name"];
              var email = form["Email"];
@@ -34,17 +34,21 @@ namespace dotnet_basics.Controllers
          }*/
 
         //Form üzerinden Model ile kullanıcıdan veri alma
-        [HttpPost]
-        public IActionResult Index(Contact model)
+        public IActionResult Form()
         {
-            ViewBag.Message = $"Thank you {model.Name}, we will contact you shortly at {model.Email}.";
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Form(UserInput uModel)
+        {
+            ViewBag.Message = $"Thank you {uModel.Name}, we will contact you shortly at {uModel.Email}.";
             return View();
         }
 
 
         //Query String ile kullanıcıdan veri alma (3 farklı şekilde)
         //Request.Query ile
-        /*  public IActionResult GetData()
+        /*  public IActionResult QueryString()
           {
               var queryString = Request.QueryString; // Request yapılan endpointe query string parametresi eklenmiş eklenmemiş mi hakkında bilgi verir.
               var a = Request.Query["category"].ToString(); // Query string parametrelerine erişim sağlar.
@@ -55,31 +59,31 @@ namespace dotnet_basics.Controllers
           }*/
 
         // Parametre ile
-        /*public IActionResult GetData(string category, string brand)
+        /*public IActionResult QueryString(string category, string brand)
         {
-            //Contact/GetData?category=phones&brand=apple
+            //UserInput/QueryString?category=phones&brand=apple
             ViewBag.Message = $"Category: {category}, Brand: {brand}";
             return View();
         }*/
 
         // Model ile
-        /*  public class QueryModel
+          public class QueryModel
           {
               public string? Category { get; set; }
               public string? Brand { get; set; }
           }
-          public IActionResult GetData(QueryModel qmodel)
+          public IActionResult QueryString(QueryModel qmodel)
           {
-              //Contact/GetData?category=phones&brand=apple
+              //UserInput/QueryString?category=phones&brand=apple
               return View(qmodel);
-          }*/
+          }
 
 
         // Route Parameter ile kullanıcıdan veri alma
         // Parametre ile
-       /* public IActionResult GetData(string name, string surname, int age)
+       /* public IActionResult RouteParameter(string name, string surname, int age)
         {
-            // Contact/GetData/Nihat/Aydin/23
+            // UserInput/RouteParameter/Nihat/Aydin/23
             ViewBag.Message = $"Name: {name}, Surname: {surname}, Age: {age}";
             return View();
         }*/
@@ -91,14 +95,14 @@ namespace dotnet_basics.Controllers
             public string? Surname { get; set; }
             public int Age { get; set; }
         }
-        public IActionResult GetData(RouteModel rmodel)
+        public IActionResult RouteParameter(RouteModel rmodel)
         {
-            // Contact/GetData/Nihat/Aydin/23
+            // UserInput/RouteParameter/Nihat/Aydin/23
             return View(rmodel);
         }
 
         // Header Bilgilerine Erişim
-        public IActionResult GetHeader()
+        public IActionResult Header()
         {
             // var header = Request.Headers.ToList(); // Tüm header bilgilerini alır.
             var value = Request.Headers["lorem"]; // Belirli bir header bilgisine erişim sağlar.
@@ -114,12 +118,12 @@ namespace dotnet_basics.Controllers
             public int Age { get; set; }
         }
 
-        public IActionResult AjaxExample()
+        public IActionResult Ajax()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult AjaxExample([FromBody] AjaxModel ajaxModel)
+        public IActionResult Ajax([FromBody] AjaxModel ajaxModel)
         {
             return Json(new { message = $"Veri alındı: {ajaxModel.Name}, {ajaxModel.Age}" });
         }

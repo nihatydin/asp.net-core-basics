@@ -33,14 +33,14 @@ namespace dotnet_basics.Controllers
         // ViewBag ile view'a veri aktarma
         public IActionResult Viewbag()
         {
-            ViewBag.Message = "Hello from ViewBag!";
+            ViewBag.Message = "ViewBag'den gelen mesaj";
             return View();
         }
 
         // ViewData ile view'a veri aktarma
         public IActionResult Viewdata()
         {
-            ViewData["Message"] = "Hello from ViewData!";
+            ViewData["Message"] = "ViewData'dan gelen mesaj";
             return View();
         }
 

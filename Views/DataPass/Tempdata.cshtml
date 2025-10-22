@@ -1,6 +1,7 @@
 @model dotnet_basics.Controllers.DataPassController.TempdataModel;
 
-<h4>TemData Redirect to Index Form</h4>
+<h4>TemData Redirect to Index Form (PRG Pattern)</h4>
+<p>Post -> Redirect -> Get <br /> Böylece redirect sonrasında bile veri korunur.</p>
 
 <form asp-action="Tempdata" asp-controller="DataPass" method="post">
     <input type="text" asp-for="Name" placeholder="İsim" />

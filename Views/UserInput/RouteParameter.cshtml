@@ -1,0 +1,17 @@
+@model dotnet_basics.Controllers.UserInputController.RouteModel
+
+<h3>Route Parameter ile Veri Alma</h3>
+<p>string name, string surname, int age değerlerini alır. example: /UserInput/RouteParameter/Nihat/Aydin/23</p>
+
+@{
+    if(Model.Name != null)
+    {
+        <ul>
+            <li>Name: @Model.Name</li>
+            <li>Surname: @Model.Surname</li>
+            <li>Age: @Model.Age</li>
+        </ul>
+    }
+}
+
+

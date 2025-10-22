@@ -1,0 +1,14 @@
+@model dotnet_basics.Controllers.UserInputController.QueryModel
+
+<h3>Query String ile Veri Alma</h3>
+<p>category ve brand key'leri ile veri gönderilir. example: /UserInput/QueryString?category=phones&brand=apple</p> 
+
+@{
+    if(Model != null)
+    {
+        <ul>
+            <li>Category: @Model.Category</li>
+            <li>Surname: @Model.Brand</li>
+        </ul>
+    }
+}
