@@ -10,6 +10,7 @@ I have also covered all the methods and topics used here in detail on my Medium 
 
 ## Features and Topics Covered
 
+- Usage custom route handler (Basic Minimal Api Example) & basic system monitoring
 - Methods of getting data from the user
 - Transferring Data to View
 - Model Binding
